@@ -1,10 +1,10 @@
-﻿#SingleInstance Force
+#SingleInstance Force
 #NoEnv
-ver = 1.0
+ver = 1.2
 SetWorkingDir %A_ScriptDir%
 SetBatchLines -1
 FileCreateDir, C:\Games\Files_for_AHK\
-UrlDownloadToFile, https://raw.githubusercontent.com/fawjoAHK/AHK/main/keys.txt, C:\Games\Files_for_AHK\keys.txt
+UrlDownloadToFile, https://raw.githubusercontent.com/fawjoAHK/AHK/main/keys.txt, C:\Games\Files_for_AHK\version.ini
 MsgBox, 68, АHK для отдела КР, Запускать следует от имени Администратора!                               Ты запустил верно?
 IfMsgBox Yes
 {
@@ -12,6 +12,12 @@ IfMsgBox Yes
 Else
 {
 ExitApp
+}
+IniRead, ver_ahk, C:\Games\Files_for_AHK\version.ini, VER, ver
+If(ver_ahk != ver)
+{
+    Filedelete, %A_ScriptDir%
+    UrlDownloadToFile, https://github.com/fawjoAHK/AHK/blob/main/KR.ahk, %A_ScriptDir%
 }
 IniRead, zvan, C:\Games\Files_for_AHK\info.egl, USER, zvan
 IniRead, job, C:\Games\Files_for_AHK\info.egl, USER, job
