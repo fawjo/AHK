@@ -16,9 +16,9 @@ ExitApp
 IniRead, ver_ahk, C:\Games\Files_for_AHK\version.ini, VER, ver
 If(ver_ahk != ver)
 {
-    Filedelete, %A_ScriptDir%\KR.ahk
-    UrlDownloadToFile, https://github.com/fawjoAHK/AHK/blob/main/KR.ahk, %A_ScriptDir%\KR.ahk
-    TrayTip , Обновление!, Вышло обновление скрипта. Было: %ver_ahk%, стало %ver%, 10, 1
+  TrayTip , Обновление!, Вышло обновление скрипта. Загрузка..., 10, 1
+  Filedelete, %A_ScriptDir%\KR.ahk
+  UrlDownloadToFile, https://github.com/fawjoAHK/AHK/blob/main/KR.ahk, %A_ScriptDir%\KR.ahk
 }
 IniRead, zvan, C:\Games\Files_for_AHK\info.egl, USER, zvan
 IniRead, job, C:\Games\Files_for_AHK\info.egl, USER, job
