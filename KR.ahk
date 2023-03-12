@@ -1,6 +1,6 @@
 #SingleInstance Force
 #NoEnv
-ver = 1.2
+ver = 1.3
 SetWorkingDir %A_ScriptDir%
 SetBatchLines -1
 FileCreateDir, C:\Games\Files_for_AHK\
